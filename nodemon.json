@@ -1,0 +1,7 @@
+{
+    "env": {
+        "PORT": "3000",
+        "MONGO_ATLAS_USER": "node-admin",
+        "MONGO_ATLAS_PW": "node%2Dadmin%2D345%24%24"
+    }
+}
