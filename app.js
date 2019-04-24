@@ -8,9 +8,7 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 // Connect to Mongo DB
-mongoose.connect('nmongodb+srv://' + 
-    process.env.MONGO_ATLAS_USER + ':' + process.env.MONGO_ATLAS_PW + 
-    '@node-rest-api-ixvlx.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
+mongoose.connect('nmongodb+srv://node-admin:node%2Dadmin%2D345%24%24@node-rest-api-ixvlx.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 app.use(morgan('dev')); // Logger for dev mode
 app.use(bodyParser.urlencoded({extended: false})); //set extended to false to parse simple bodies for url encoded data
@@ -22,7 +20,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
     if (req.method === 'OPTIONS') {
-        res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, PATCH, DELETE');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
         return res.status(200).json({});
     }
     next(); //continue to route handling
